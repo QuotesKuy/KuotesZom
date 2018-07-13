@@ -104,6 +104,9 @@
     </div>
     <div id='homeView'></div>
     <div id='foodName'></div>
+    <img width="900px" src="https://image.freepik.com/free-photo/vegetables-and-pizzas-near-pasta_23-2147772122.jpg" />
+<br/><br/>
+<img width="900px" src="https://image.freepik.com/free-photo/cooking-ingredients-for-pasta_23-2147853465.jpg" />
     <!-- <select id="category"></select> -->
     <script>
       //   axios.get('http://localhost:3000/category')
@@ -130,7 +133,7 @@
             result.data.forEach(foods => {
               console.log(foods.restaurant)
               $('#foodName').append(`<img src="${foods.restaurant.featured_image}" width="250" height="200"/>` + '<br/><br/>' + 'Restaurant: ' + foods.restaurant.name + '<br/>' + 'Average cost for two: ' + foods.restaurant.average_cost_for_two +
-                '<br/>' + 'Address: ' + foods.restaurant.location.address + '<br/><br/>')
+                '<br/>' + 'Address: ' + foods.restaurant.location.address + '<br/><br/><hr/>')
             })
           })
       }

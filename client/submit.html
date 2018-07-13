@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<style>
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        </style>
+
+    <h1 align="center">post an image and caption to our tumblr blog like a pro</h1>
+    <!-- <button onclick="testing()">testing</button> -->
+
+    <form id="form-submit">
+        image url:<br>
+        <input type="text" name="image" id="imageUrl" ><br>
+        caption:<br>
+        <input type="text" name="caption" id="caption" ><br><br>
+        <input type="submit" value="Submit">
+      </form>
+
+      <h1 align="center">submit you favorite quote to our tumblr</h1>
+      <br>
+
+      <form id="submit-quote">
+        quotes:<br>
+        <input type="text" name="quotes" id="quotes" ><br><br>
+        <input type="submit" value="Submit">
+      </form>
+<img width="900px" src="https://image.freepik.com/free-photo/cooking-ingredients-for-pasta_23-2147853465.jpg" />
+
+
+    <script>
+        function testing(){
+            alert("you did it dude")
+        }
+        document.getElementById('form-submit').addEventListener('submit', post)
+        function post(e){
+
+            let imageurl = document.getElementById("imageUrl").value;
+            let caption = document.getElementById("caption").value;
+            // console.log("wooof")
+            axios.post('http://localhost:3000/users/picture', {
+                caption: caption,
+                source: imageurl
+            })
+            .then(function (response) {
+                console.log(response);
+                window.location="https://hacktiv8quotes.tumblr.com/"
+            })
+            .catch(function (error) {
+                alert("something went wrong!! its problably the url")
+                // console.log(error);
+            })
+            e.preventDefault()
+        }
+
+        document.getElementById("submit-quote").addEventListener("submit", submitQuote)
+
+
+        function submitQuote(e){
+            let quote = document.getElementById("quotes").value;
+            axios.post("http://localhost:3000/users/quote",{
+                quote : quote
+            })
+            .then(function (response) {
+                console.log(response);
+                window.location="https://hacktiv8quotes.tumblr.com/"
+            })
+            .catch(function (error) {
+                alert("omg something went wrong")
+                // console.log(error);
+            })
+
+            console.log(quote)
+            e.preventDefault()
+        }
+
+    </script>
+<body>
+
+</body>
+</html>

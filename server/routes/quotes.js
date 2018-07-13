@@ -14,10 +14,10 @@ const {
 
 /* GET home page. */
 router
-  .get('/quotes', Authentication.authenticationRead, Control.show)
-  .get('/inspire', Authentication.authenticationRead, Control.showInspire)
-  .get('/random', Authentication.authenticationRead, Control.random)
-  .get('/pict', Authentication.authenticationRead, Control.pict)
-  .get('/find', Authentication.authenticationRead, Control.cari)
+  .get('/quotes', Control.show)
+  .get('/inspire', Control.showInspire)
+  .get('/random', Control.random)
+  .get('/pict', Control.pict)
+  .get('/find', Control.cari)
 
 module.exports = router;
