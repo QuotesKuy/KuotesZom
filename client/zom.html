@@ -133,7 +133,7 @@
             result.data.forEach(foods => {
               console.log(foods.restaurant)
               $('#foodName').append(`<img src="${foods.restaurant.featured_image}" width="250" height="200"/>` + '<br/><br/>' + 'Restaurant: ' + foods.restaurant.name + '<br/>' + 'Average cost for two: ' + foods.restaurant.average_cost_for_two +
-                '<br/>' + 'Address: ' + foods.restaurant.location.address + '<br/><br/>')
+                '<br/>' + 'Address: ' + foods.restaurant.location.address + '<br/><br/><hr/>')
             })
           })
       }
