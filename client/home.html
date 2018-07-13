@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Create two equal columns that floats next to each other */
+
+      .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        margin: 0px auto
+        /* Should be removed. Only for demonstration */
+      }
+
+      /* Clear floats after the columns */
+
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <h2>Choose</h2>
+
+    <div class="row">
+      <div class="column">
+        <a href="http://127.0.0.1:8080/quotes.html"><img height="400px" src="https://image.freepik.com/free-vector/quote-template-collection_23-2147648353.jpg" /></a>
+        <h2>Quotes</h2>
+
+      </div>
+      <div class="column">
+        <a href="http://127.0.0.1:8080/zom.html"><img height="400px" src="https://image.freepik.com/free-vector/watercolor-healthy-food-background_23-2147861344.jpg" />
+        </a>
+        <h2>Zoomatos</h2>
+
+      </div>
+    </div>
+
+  </body>
+
+</html>
