@@ -12,8 +12,8 @@ router.get('/', userController.home)
 router.get('/all', Controller.retrieveAllPost)
 router.post('/text', Controller.postText);
 router.post('/picture', Controller.postPicture);
-router.post('/quote', Controller.postQuote)
-router.post('/login', userController.registerUser)
+router.post('/quote', Controller.postQuote);
+router.post('/login', userController.registerUser);
 
 
 module.exports = router;
