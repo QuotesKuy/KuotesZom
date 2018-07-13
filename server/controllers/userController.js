@@ -33,7 +33,7 @@ class UserController {
             const tokenUser = jwt.sign({ id : user._id, email : user.email }, process.env.JWT_SECRET_KEY);
             // console.log(tokenUser);
             req.headers.token = tokenUser
-            localStorage.setItem("token", tokenUser);
+            // localStorage.setItem("token", tokenUser);
             res.status(200).json(tokenUser)
           })
           // , function (err, small) {
@@ -44,7 +44,7 @@ class UserController {
           const tokenUser = jwt.sign({ id : user._id, email : user.email }, process.env.JWT_SECRET_KEY);
           // console.log(tokenUser);
           req.headers.token = tokenUser
-          localStorage.setItem("token", tokenUser);
+          // localStorage.setItem("token", tokenUser);
           res.status(200).json(tokenUser)
         }
       });
